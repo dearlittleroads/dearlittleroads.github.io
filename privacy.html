@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dear Little Roads beta privacy policy</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/icon-512x512.png">
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><rect x="11" y="20" width="42" height="28" rx="6" fill="currentColor"/><path d="m14 22 18 14 18-14" fill="none" stroke="#e76f51" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="36" r="4.5" fill="#f4b942"/></svg></span><span class="brand-wordmark">Dear Little Roads</span></a>
+    <nav class="toplinks" aria-label="Information"><a href="support.html">Support</a></nav>
+  </header>
+
+  <main class="policy">
+    <div class="eyebrow">Closed-beta privacy policy</div>
+    <h1>Your route is yours.</h1>
+    <p><strong>Effective:</strong> 19 July 2026 · <strong>Developer:</strong> Lantern Lion Games · <strong>Contact:</strong> <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a></p>
+    <p class="notice">This policy covers the measured Dear Little Roads Android closed beta. Its declarations will be checked again against the exact signed Android App Bundle before recruitment begins.</p>
+
+    <h2>What stays on your device</h2>
+    <p>Campaign progress, best move counts, Mailbag progress, sound and vibration preferences stay on the device. Dear Little Roads has no player account and does not use cloud saves in this beta.</p>
+
+    <h2>Optional beta diagnostics</h2>
+    <p>Dear Little Roads sends no analytics until you explicitly choose <strong>Share diagnostics</strong>. You can decline and still use the whole game, or turn diagnostics off later in About.</p>
+    <p>When enabled, the app sends a random app-profile code, random session and route-run codes, app version and beta cohort, timestamps and local date, allowlisted puzzle events such as starts, completions, moves, stamps, hints, resets and exits, active-time totals, Mailbag progress, settings state, sharing/review actions, and coarse technical-error categories.</p>
+    <p>Dear Little Roads does not include your name, email, Google account, contacts, messages, precise or coarse location, Advertising ID, Android ID, route drawing, individual taps, clipboard, typed text, purchases, or health data in diagnostic event properties. It also does not deliberately include a device model or full user agent in those properties. Like any HTTPS service, PostHog may transiently process ordinary network metadata, including an IP address and WebView user-agent header, to receive the request.</p>
+
+    <h2>Why and where diagnostics are processed</h2>
+    <p>Diagnostics are used to understand onboarding, puzzle difficulty, voluntary return, Mailbag use, and coarse technical reliability during the beta. Processing is based on your optional consent.</p>
+    <p>Allowlisted events are sent over HTTPS to a dedicated PostHog Cloud EU project hosted in Frankfurt. PostHog acts as the analytics service provider. Dear Little Roads uses no PostHog SDK, autocapture, or session replay. Every event sets <code>$process_person_profile: false</code> and <code>$geoip_disable: true</code>. PostHog is configured not to store the client IP with events, although it may process the IP transiently before discarding it.</p>
+
+    <h2>Retention and deletion</h2>
+    <p>Lantern Lion Games commits to deleting raw beta events no later than 60 days after the relevant beta cohort begins, after aggregate product decisions are recorded. Turning diagnostics off stops new collection and clears events waiting on the device.</p>
+    <p>After opting in, About displays a random deletion code. To delete already uploaded events, send that code to <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a>. We will request deletion from PostHog and confirm when it has been processed.</p>
+
+    <h2>Beta recruitment information</h2>
+    <p>If you request closed-beta access by email, Google and the email providers involved process the message under their own terms. We use the email address you provide only to grant closed-test access, send one installation invitation, send one optional feedback request, and communicate an essential build or safety notice. Closed-test access requires an address associated with Google Play. The recruitment list is not connected to the random in-game diagnostics code and is deleted within 30 days after the beta ends.</p>
+
+    <h2>Sharing, sale, and advertising</h2>
+    <p>We do not sell personal data, use it for advertising, or share it with data brokers. Beta service providers process only the information needed to provide their service under their own terms and our configuration.</p>
+
+    <h2>Security and choices</h2>
+    <p>Diagnostics are encrypted in transit. Access to the beta analytics project and recruitment list is restricted to the organizer. No method of storage is perfectly secure, so the beta deliberately minimizes what it collects.</p>
+    <p>You may decline diagnostics, switch them off, request deletion, withdraw from recruitment, leave the Play test, or uninstall at any time.</p>
+
+    <h2>Children</h2>
+    <p>This measured beta recruits adults aged 18 or older and is not directed to children. A future public release will be reviewed separately before changing the target audience.</p>
+
+    <h2>Your rights and contact</h2>
+    <p>Depending on where you live, you may have rights to access, correct, delete, restrict, or object to processing, and to withdraw consent. Contact <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a>. You may also complain to your local data-protection authority.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes materially during a later cohort, the new policy will show a new effective date. The measured beta consent screen and data inventory remain frozen during a cohort.</p>
+  </main>
+
+  <footer><div class="wrap"><a href="index.html">Dear Little Roads beta</a> · <a href="support.html">Support</a></div></footer>
+</body>
+</html>
