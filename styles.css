@@ -40,6 +40,7 @@ h1 { max-width: 700px; margin: 14px 0 22px; font-size: clamp(48px, 7vw, 86px); }
 .policy h1 { font-size: clamp(42px, 6vw, 68px); }
 .policy h2 { margin-top: 42px; font-size: 30px; }
 .policy p, .policy li { color: #3f6158; line-height: 1.7; }
+.policy address { color: #3f6158; font-style: normal; line-height: 1.7; margin: 0 0 1rem; }
 .notice { padding: 18px 20px; border-left: 5px solid #e6aa3c; background: #fff6d7; }
 footer { padding: 36px 0 54px; border-top: 1px solid #d6d6c3; color: #58746b; }
 
