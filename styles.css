@@ -6,8 +6,11 @@
 }
 
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body { margin: 0; background: #f8f1df; color: #173f3a; }
 a { color: #146f68; }
+.skip-link { position: fixed; z-index: 10; top: 8px; left: 8px; padding: 10px 14px; border-radius: 10px; background: #173f3a; color: #fffaf0; font-weight: 800; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
 .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
 .topbar { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; font-weight: 800; }
@@ -41,6 +44,12 @@ h1 { max-width: 700px; margin: 14px 0 22px; font-size: clamp(48px, 7vw, 86px); }
 .policy h2 { margin-top: 42px; font-size: 30px; }
 .policy p, .policy li { color: #3f6158; line-height: 1.7; }
 .policy address { color: #3f6158; font-style: normal; line-height: 1.7; margin: 0 0 1rem; }
+.policy code { overflow-wrap: anywhere; }
+.language-switcher { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 42px; }
+.language-switcher a { min-width: 112px; padding: 10px 16px; border: 1px solid #b9c8bd; border-radius: 999px; background: #fffaf0; text-align: center; text-decoration: none; font-weight: 800; }
+.language-switcher a:hover, .language-switcher a:focus-visible { border-color: #146f68; outline: 3px solid rgb(20 111 104 / .18); outline-offset: 2px; }
+.language-section { scroll-margin-top: 24px; }
+.language-section + .language-section { margin-top: 80px; padding-top: 80px; border-top: 2px solid #c9ccba; }
 .notice { padding: 18px 20px; border-left: 5px solid #e6aa3c; background: #fff6d7; }
 footer { padding: 36px 0 54px; border-top: 1px solid #d6d6c3; color: #58746b; }
 
@@ -59,4 +68,16 @@ footer { padding: 36px 0 54px; border-top: 1px solid #d6d6c3; color: #58746b; }
   .hero { gap: 36px; }
   .lede { font-size: 20px; }
   .screens, .facts { grid-template-columns: 1fr; }
+  .language-switcher a { flex: 1; }
+  .language-section + .language-section { margin-top: 60px; padding-top: 60px; }
+  .policy h1 {
+    font-size: clamp(36px, 12vw, 42px);
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+  .policy h2 { hyphens: auto; overflow-wrap: anywhere; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
