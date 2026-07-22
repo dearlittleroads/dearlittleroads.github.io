@@ -1,0 +1,23 @@
+name: Verify public beta site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify committed site contract
+        run: node scripts/verify-site.mjs
+      - name: Wait for GitHub Pages and verify the live deployment
+        run: node scripts/verify-site.mjs --live --attempts 60 --delay-ms 10000
