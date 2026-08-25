@@ -3,21 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Page not found — Dear Little Roads</title>
+  <meta name="description" content="Dear Little Roads page-not-found guidance in English and German.">
+  <title>Page not found / Seite nicht gefunden — Dear Little Roads</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/icon-512x512.png">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content / <span lang="de">Zum Inhalt</span></a>
   <header class="wrap topbar">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><rect x="11" y="20" width="42" height="28" rx="6" fill="currentColor"/><path d="m14 22 18 14 18-14" fill="none" stroke="#e76f51" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="36" r="4.5" fill="#f4b942"/></svg></span><span class="brand-wordmark">Dear Little Roads</span></a>
   </header>
 
-  <main class="policy">
-    <div class="eyebrow">Wrong turn</div>
-    <h1>This road ends here.</h1>
-    <p>Return <a href="index.html">Home</a>, read the <a href="privacy.html">Privacy policy</a>, or visit <a href="support.html">Support</a>.</p>
+  <main class="policy" id="main">
+    <nav class="language-switcher" aria-label="Language selection / Sprachauswahl">
+      <a href="#english" lang="en">English</a>
+      <a href="#deutsch" lang="de">Deutsch</a>
+    </nav>
+
+    <article class="language-section" id="english" lang="en" aria-labelledby="english-title">
+      <div class="eyebrow">Wrong turn</div>
+      <h1 id="english-title">This road ends here.</h1>
+      <p>Return <a href="index.html">Home</a>, read the <a href="privacy.html">Privacy policy</a>, visit <a href="support.html">Support</a>, or open the <a href="legal.html">Legal notice</a>.</p>
+    </article>
+
+    <article class="language-section" id="deutsch" lang="de" aria-labelledby="deutsch-title">
+      <div class="eyebrow">Falsch abgebogen</div>
+      <h1 id="deutsch-title">Diese Straße endet hier.</h1>
+      <p>Zurück zur <a href="index.html">Startseite</a>, lies die <a href="privacy.html#deutsch">Datenschutzerklärung</a>, besuche die <a href="support.html#deutsch">Hilfe</a> oder öffne das <a href="legal.html#deutsch">Impressum</a>.</p>
+    </article>
   </main>
 
-  <footer><div class="wrap"><a href="index.html">Dear Little Roads beta</a> · <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></div></footer>
+  <footer><div class="wrap"><a href="index.html">Dear Little Roads</a> · <a href="privacy.html">Privacy / <span lang="de">Datenschutz</span></a> · <a href="support.html">Support / <span lang="de">Hilfe</span></a> · <a href="legal.html">Legal notice / <span lang="de">Impressum</span></a></div></footer>
 </body>
 </html>

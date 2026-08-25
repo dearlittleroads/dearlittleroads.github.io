@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="English and German support and beta-data deletion help for Dear Little Roads on Android.">
+  <meta name="description" content="English and German support for Dear Little Roads on Android.">
   <link rel="canonical" href="https://dearlittleroads.github.io/support.html">
-  <title>Dear Little Roads beta support / Hilfe</title>
+  <title>Dear Little Roads support / Hilfe</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="assets/icon-512x512.png">
 </head>
@@ -13,40 +13,74 @@
   <a class="skip-link" href="#main">Skip to content / <span lang="de">Zum Inhalt</span></a>
   <header class="wrap topbar">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><rect x="11" y="20" width="42" height="28" rx="6" fill="currentColor"/><path d="m14 22 18 14 18-14" fill="none" stroke="#e76f51" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="36" r="4.5" fill="#f4b942"/></svg></span><span class="brand-wordmark">Dear Little Roads</span></a>
-    <nav class="toplinks" aria-label="Information"><a href="privacy.html">Privacy / <span lang="de">Datenschutz</span></a></nav>
+    <nav class="toplinks" aria-label="Information"><a href="privacy.html">Privacy / <span lang="de">Datenschutz</span></a> <a href="legal.html">Legal notice / <span lang="de">Impressum</span></a></nav>
   </header>
 
   <main class="policy" id="main">
-    <nav class="language-switcher" aria-label="Language selection">
+    <nav class="language-switcher" aria-label="Language selection / Sprachauswahl">
       <a href="#english" lang="en">English</a>
       <a href="#deutsch" lang="de">Deutsch</a>
     </nav>
 
     <article class="language-section" id="english" lang="en" aria-labelledby="english-title">
-      <div class="eyebrow">Beta support</div>
+      <div class="eyebrow">Support</div>
       <h1 id="english-title">Something went off route?</h1>
       <p>Dear Little Roads support is operated by <strong>Lisa Wegel</strong> under the developer name <strong>Lantern Lion Games</strong>. Contact <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a>.</p>
-      <p>For a technical problem, please include the Dear Little Roads version shown in About, your Android version if known, what you expected, and what happened. A screenshot is welcome if it does not contain private information.</p>
-      <p class="notice">Do not send passwords, payment details, contacts, private photos, or unrelated device logs. Dear Little Roads support will never ask for your Google password.</p>
+      <p>For a technical problem, include the Dear Little Roads version shown in About, your Android version if known, what you expected, and what happened. The form does not accept attachments; if a screenshot would help and contains no private information, use the email fallback.</p>
+      <p class="notice">Do not send passwords, payment details, contacts, private photos, purchase tokens, or unrelated device logs. Dear Little Roads support will never ask for your Google password.</p>
 
-      <h2>Delete beta diagnostic data</h2>
-      <p>If diagnostics were enabled, open <strong>About → Data details</strong>, switch <strong>Beta diagnostics</strong> off, and copy the random deletion code. Email that exact code to <a href="mailto:dear.little.roads@gmail.com?subject=Delete%20Dear%20Little%20Roads%20beta%20data">dear.little.roads@gmail.com</a> with the subject <strong>Delete Dear Little Roads beta data</strong>.</p>
-      <p>Do not include your Google password or device identifiers. Keep diagnostics off and do not reuse the code after requesting deletion. We will confirm only after the matching PostHog events are absent; PostHog may process event deletion on a schedule.</p>
+      <section class="contact-panel" id="english-contact" aria-labelledby="english-contact-title">
+        <h2 id="english-contact-title">Contact support</h2>
+        <p>Nothing is sent while you read or type. When you press <strong>Send message</strong>, your reply email, selected topic, message, and the form language are submitted to our contact-form provider, Formward. Formward then attempts to deliver a notification to our Gmail support inbox. See the <a href="privacy.html#english">privacy policy</a> for providers, retention, and your rights.</p>
+        <form class="contact-form" data-contact-form data-locale="en" action="https://forms.formward.eu/f/7da41dbf-4dca-4835-ab97-129857fc20f5" method="POST">
+          <input type="hidden" name="locale" value="en">
+          <input type="hidden" name="_subject" value="Dear Little Roads support message">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_redirect" value="https://dearlittleroads.github.io/support.html#english-contact-sent">
+          <div class="contact-honeypot" aria-hidden="true">
+            <label for="english-contact-website">Leave this field empty</label>
+            <input id="english-contact-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <label for="english-contact-email">Reply email</label>
+          <input id="english-contact-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+          <label for="english-contact-topic">Topic</label>
+          <select id="english-contact-topic" name="topic" required>
+            <option value="">Choose a topic</option>
+            <option value="technical">Technical problem</option>
+            <option value="purchase-restore">Purchase or restore</option>
+            <option value="privacy-data">Privacy or data request</option>
+            <option value="closed-test">Invitation-only closed test</option>
+            <option value="other">Something else</option>
+          </select>
+          <label for="english-contact-message">Message</label>
+          <textarea id="english-contact-message" name="message" rows="7" maxlength="4000" required></textarea>
+          <p class="contact-help">Please include only what we need to answer. Do not send passwords, payment credentials, purchase tokens, or unrelated private information.</p>
+          <button class="button contact-submit" type="submit">Send message</button>
+          <p class="contact-status" data-contact-status role="status" aria-live="polite"></p>
+          <p class="contact-fallback">If the form does not work, email <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a>.</p>
+          <p class="notice contact-native-success" id="english-contact-sent" role="status" tabindex="-1"><strong>The form service returned you after processing the submission; mailbox delivery is not confirmed. Use the email link if needed.</strong></p>
+        </form>
+      </section>
 
-      <h2>Turn diagnostics off</h2>
-      <p>Open About and switch <strong>Beta diagnostics</strong> off. This immediately stops new collection and clears events waiting to upload. It does not remove progress or disable game features.</p>
+      <h2>Purchases and restoring access</h2>
+      <p>If Google Play shows the optional full-unlock offer, it is one non-subscription Google Play purchase that unlocks Routes 11–63 and the full Mailbag/archive. Routes 1–10 and one fixed Quick Delivery sample remain free whether or not the offer is currently available. The app shows the price supplied by Google Play before you choose to buy.</p>
+      <p>If you choose the offer, a pending purchase unlocks only after Google Play confirms it. To recover a confirmed purchase, open Settings and choose <strong>Restore purchase</strong> while using the Google account that made the purchase. Restore recovers the purchase entitlement, not puzzle progress; progress remains only on the device.</p>
+      <p>If Google Play reports that a purchase was refunded, revoked, or no longer owned, paid content is locked but saved puzzle progress is not deleted. Try Restore again and contact us if the result still looks wrong. Provide only the minimum needed: we may ask for the Google Play order ID or, if that does not find the order, the full Google-account email used for the purchase so authorized support can search Google's Order Management. Never email payment credentials, passwords, or a purchase token. We do not maintain a routine order export or separate order database; the <a href="privacy.html#english">privacy policy</a> explains the narrow case and retention rules.</p>
 
-      <h2>Leave the beta or remove tester details</h2>
+      <h2>Privacy and diagnostics</h2>
+      <p>The planned public version has no analytics or diagnostics collection, prompt, toggle, identifier, or deletion code. After an update from an earlier test version, separate old diagnostics settings, random codes, and queued events may remain on the device, inactive. The planned public version does not intentionally read, change, delete, retry access to, use, or send them. An old diagnostics choice inside the ordinary progress record may be passively carried forward unchanged but never activates analytics. See the <a href="privacy.html">privacy policy</a> for the limited device, Google Play, website, email, and closed-test data that can still be involved.</p>
+      <p><strong>Invitation-only closed-test version 0.13.7 is different.</strong> It may still show the older optional diagnostics control and, after an earlier opt-in, retain a random diagnostics code and queued events on the device. While Diagnostics remains on, it may send an HTTPS request containing queued allowlisted event records and random identifiers to the retired PostHog Cloud EU endpoint. PostHog infrastructure may also receive ordinary network metadata. The dedicated service project and its stored data were permanently deleted on 11 August 2026, and no replacement project is connected to this test build, but the request may still reach PostHog infrastructure. In About, switch Diagnostics off to withdraw the earlier opt-in, stop new attempts, and clear the pending queue. Do not send us the old deletion code: there is no remaining project record to match it to. The planned public version never sends the old local data and leaves separate old diagnostics records untouched and inactive. Clearing app data or uninstalling removes local state, but can remove puzzle progress.</p>
+
+      <h2>If you joined an invitation-only closed test</h2>
       <p>Open the <a href="https://play.google.com/apps/testing/com.dearlittleroads.puzzle">Google Play test page</a>, choose to leave the test, and uninstall normally. Leaving is always voluntary.</p>
-      <p>If you want already uploaded diagnostics deleted, copy the deletion code and send the request before uninstalling or clearing app data; otherwise the code may be lost.</p>
-      <p>Leaving the Play test does not necessarily remove your address from our organizer-managed tester list. To request removal, email <a href="mailto:dear.little.roads@gmail.com?subject=Remove%20Dear%20Little%20Roads%20tester%20details">dear.little.roads@gmail.com</a> from the Google-account email used for test access. This request is separate from deleting optional diagnostics, which requires the random deletion code described above.</p>
+      <p>Leaving the Play test does not necessarily remove your address from our organizer-managed tester list. To request removal, email <a href="mailto:dear.little.roads@gmail.com?subject=Remove%20Dear%20Little%20Roads%20tester%20details">dear.little.roads@gmail.com</a> from the Google-account email used for test access.</p>
 
-      <h2>Known beta boundaries</h2>
+      <h2>Known limits</h2>
       <ul>
         <li>Android 7.0 or newer is required.</li>
-        <li>Progress is stored on the device and may be lost after uninstalling, clearing app data, or a later beta reset.</li>
-        <li>There is no account or cross-device restore.</li>
-        <li>The beta has no ads, purchases, or paid support.</li>
+        <li>Progress is stored on the device and may be lost after uninstalling or clearing app data.</li>
+        <li>There is no player account or cloud save. Google Play can restore a purchase entitlement, but not puzzle progress.</li>
+        <li>The game has no ads or subscription. Google Play may offer one optional in-app purchase; support is free.</li>
       </ul>
 
       <h2>Operator address</h2>
@@ -54,30 +88,64 @@
     </article>
 
     <article class="language-section" id="deutsch" lang="de" aria-labelledby="deutsch-title">
-      <div class="eyebrow">Hilfe zum Betatest</div>
+      <div class="eyebrow">Hilfe</div>
       <h1 id="deutsch-title">Von der Route abgekommen?</h1>
       <p>Der Support für Dear Little Roads wird von <strong>Lisa Wegel</strong> unter dem Entwicklernamen <strong>Lantern Lion Games</strong> angeboten. Schreibe an <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a>.</p>
-      <p>Beschreibe bei einem technischen Problem bitte die unter „Über“ angezeigte Version von Dear Little Roads, deine Android-Version (falls bekannt), was du erwartet hast und was tatsächlich passiert ist. Ein Screenshot hilft, sofern er keine privaten Informationen enthält.</p>
-      <p class="notice">Sende keine Passwörter, Zahlungsdaten, Kontakte, privaten Fotos oder nicht benötigten Geräteprotokolle. Der Support von Dear Little Roads wird niemals nach deinem Google-Passwort fragen.</p>
+      <p>Nenne bei einem technischen Problem bitte die unter „Über“ angezeigte Version von Dear Little Roads, deine Android-Version (falls bekannt), was du erwartet hast und was tatsächlich passiert ist. Das Formular nimmt keine Anhänge an; falls ein Screenshot hilft und keine privaten Informationen enthält, nutze den E-Mail-Ersatzweg.</p>
+      <p class="notice">Sende keine Passwörter, Zahlungsdaten, Kontakte, privaten Fotos, Kauftoken oder nicht benötigte Geräteprotokolle. Der Support von Dear Little Roads wird niemals nach deinem Google-Passwort fragen.</p>
 
-      <h2>Beta-Diagnosedaten löschen</h2>
-      <p>Wenn die Diagnose aktiviert war, öffne <strong>Über → Datendetails</strong>, schalte <strong>Beta-Diagnose</strong> aus und kopiere den zufälligen Löschcode. Sende genau diesen Code mit dem Betreff <strong>Dear Little Roads Beta-Diagnosedaten löschen</strong> an <a href="mailto:dear.little.roads@gmail.com?subject=Dear%20Little%20Roads%20Beta-Diagnosedaten%20l%C3%B6schen">dear.little.roads@gmail.com</a>.</p>
-      <p>Sende weder dein Google-Passwort noch Gerätekennungen. Lass die Diagnose nach deiner Anfrage ausgeschaltet und verwende den Code nicht erneut. Wir bestätigen die Löschung erst, wenn die passenden PostHog-Ereignisse nicht mehr vorhanden sind; PostHog verarbeitet Löschaufträge möglicherweise zeitversetzt.</p>
+      <section class="contact-panel" id="deutsch-contact" aria-labelledby="deutsch-contact-title">
+        <h2 id="deutsch-contact-title">Support kontaktieren</h2>
+        <p>Beim Lesen oder Schreiben wird nichts gesendet. Erst wenn du <strong>Nachricht senden</strong> drückst, werden deine Antwort-E-Mail-Adresse, das ausgewählte Thema, deine Nachricht und die Formularsprache an den Anbieter unseres Kontaktformulars, Formward, übermittelt. Formward versucht anschließend, eine Benachrichtigung an unser Gmail-Supportpostfach zuzustellen. Anbieter, Aufbewahrung und deine Rechte erläutert die <a href="privacy.html#deutsch">Datenschutzerklärung</a>.</p>
+        <form class="contact-form" data-contact-form data-locale="de" action="https://forms.formward.eu/f/7da41dbf-4dca-4835-ab97-129857fc20f5" method="POST">
+          <input type="hidden" name="locale" value="de">
+          <input type="hidden" name="_subject" value="Dear Little Roads Hilfeanfrage">
+          <input type="hidden" name="_replyto" value="">
+          <input type="hidden" name="_redirect" value="https://dearlittleroads.github.io/support.html#deutsch-contact-sent">
+          <div class="contact-honeypot" aria-hidden="true">
+            <label for="deutsch-contact-website">Dieses Feld leer lassen</label>
+            <input id="deutsch-contact-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <label for="deutsch-contact-email">E-Mail-Adresse für die Antwort</label>
+          <input id="deutsch-contact-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+          <label for="deutsch-contact-topic">Thema</label>
+          <select id="deutsch-contact-topic" name="topic" required>
+            <option value="">Thema auswählen</option>
+            <option value="technical">Technisches Problem</option>
+            <option value="purchase-restore">Kauf oder Wiederherstellung</option>
+            <option value="privacy-data">Datenschutz- oder Datenanfrage</option>
+            <option value="closed-test">Geschlossener Test auf Einladung</option>
+            <option value="other">Etwas anderes</option>
+          </select>
+          <label for="deutsch-contact-message">Nachricht</label>
+          <textarea id="deutsch-contact-message" name="message" rows="7" maxlength="4000" required></textarea>
+          <p class="contact-help">Gib nur an, was wir für die Antwort brauchen. Sende keine Passwörter, Zahlungszugangsdaten, Kauftoken oder nicht benötigte private Informationen.</p>
+          <button class="button contact-submit" type="submit">Nachricht senden</button>
+          <p class="contact-status" data-contact-status role="status" aria-live="polite"></p>
+          <p class="contact-fallback">Falls das Formular nicht funktioniert, schreibe an <a href="mailto:dear.little.roads@gmail.com">dear.little.roads@gmail.com</a>.</p>
+          <p class="notice contact-native-success" id="deutsch-contact-sent" role="status" tabindex="-1"><strong>Der Formulardienst hat dich nach der Verarbeitung zurückgeleitet; die Zustellung ins Postfach ist nicht bestätigt. Nutze bei Bedarf den E-Mail-Link.</strong></p>
+        </form>
+      </section>
 
-      <h2>Diagnose ausschalten</h2>
-      <p>Öffne „Über“ und schalte <strong>Beta-Diagnose</strong> aus. Dadurch wird die weitere Erfassung sofort gestoppt und noch nicht übertragene Ereignisse werden gelöscht. Spielfortschritt und Funktionen bleiben erhalten.</p>
+      <h2>Käufe und Wiederher&shy;stellung</h2>
+      <p>Wenn Google Play das optionale Angebot zur vollständigen Freischaltung anzeigt, handelt es sich um einen einmaligen, nicht als Abo ausgestalteten Google-Play-Kauf. Er schaltet die Routen 11–63 und die vollständige Posttasche mit Archiv frei. Die Routen 1–10 und eine feste Proberoute „Schnelle Zustellung“ bleiben kostenlos, unabhängig davon, ob das Angebot gerade verfügbar ist. Vor dem Kauf zeigt die App den von Google Play gelieferten Preis an.</p>
+      <p>Wenn du das Angebot auswählst, schaltet ein ausstehender Kauf die Inhalte erst frei, wenn Google Play ihn bestätigt. Um einen bestätigten Kauf wiederherzustellen, öffne die Einstellungen und wähle <strong>Kauf wiederherstellen</strong>, während du das Google-Konto verwendest, mit dem der Kauf abgeschlossen wurde. Die Wiederherstellung stellt die Kaufberechtigung wieder her, nicht den Rätselfortschritt; dieser bleibt nur auf dem Gerät.</p>
+      <p>Wenn Google Play meldet, dass ein Kauf erstattet oder widerrufen wurde oder dir nicht mehr gehört, werden bezahlte Inhalte gesperrt. Gespeicherter Rätselfortschritt wird nicht gelöscht. Versuche die Wiederherstellung erneut und kontaktiere uns, wenn das Ergebnis weiterhin falsch aussieht. Sende nur das Nötigste: Wir können nach der Google-Play-Bestellnummer fragen oder, wenn damit keine Bestellung gefunden wird, nach der vollständigen E-Mail-Adresse des beim Kauf verwendeten Google-Kontos, damit berechtigter Support in Googles Bestellverwaltung suchen kann. Sende niemals Zahlungszugangsdaten, Passwörter oder ein Kauftoken. Wir führen weder einen routinemäßigen Bestellexport noch eine eigene Bestelldatenbank; die <a href="privacy.html#deutsch">Datenschutzerklärung</a> erläutert die engen Fall- und Aufbewahrungsregeln.</p>
 
-      <h2>Betatest verlassen oder Testerdaten entfernen</h2>
+      <h2>Datenschutz und Diagnose</h2>
+      <p>Die geplante öffentliche Version enthält keine Analyse- oder Diagnoseerfassung, keine Diagnoseabfrage, keinen Diagnoseschalter, keine Diagnosekennung und keinen Löschcode. Nach einer Aktualisierung von einer früheren Testfassung können getrennte alte Diagnoseeinstellungen, zufällige Kennungen und wartende Ereignisse inaktiv auf dem Gerät gespeichert bleiben. Die geplante öffentliche Version liest, ändert oder löscht sie nicht absichtlich und versucht auch später nicht erneut, auf sie zuzugreifen; sie verwendet ihren Inhalt nicht und überträgt ihn nicht. Eine alte Diagnoseentscheidung im gewöhnlichen Spielstandsdatensatz kann passiv und unverändert mitgeführt werden, löst aber keine Analyse aus. Die <a href="privacy.html#deutsch">Datenschutzerklärung</a> beschreibt die begrenzten Geräte-, Google-Play-, Website-, E-Mail- und Testdaten, die dennoch betroffen sein können.</p>
+      <p><strong>Die geschlossene Testfassung 0.13.7 nur auf Einladung ist anders.</strong> Sie kann noch den älteren optionalen Diagnoseschalter anzeigen und nach einer früheren Einwilligung eine zufällige Diagnosekennung und wartende Ereignisse auf dem Gerät speichern. Bei eingeschalteter Diagnose kann sie eine HTTPS-Anfrage mit wartenden freigegebenen Ereignisdatensätzen und zufälligen Kennungen an den stillgelegten PostHog-Cloud-EU-Endpunkt senden. Die PostHog-Infrastruktur kann außerdem gewöhnliche Netzwerk-Metadaten erhalten. Das zugehörige Dienstprojekt und seine gespeicherten Daten wurden am 11. August 2026 dauerhaft gelöscht; mit dieser Testfassung ist kein Ersatzprojekt verbunden. Die Anfrage kann die PostHog-Infrastruktur weiterhin erreichen. Schalte die Diagnose unter „Über“ aus, um die frühere Einwilligung zu widerrufen, neue Versuche zu stoppen und die Warteschlange zu löschen. Sende uns den alten Löschcode nicht: Es gibt keinen verbliebenen Projektdatensatz, dem er zugeordnet werden könnte. Die geplante öffentliche Version sendet die alten lokalen Daten nie und lässt getrennte alte Diagnosedatensätze unangetastet und inaktiv. Beim Löschen der App-Daten oder bei einer Deinstallation werden lokal gespeicherte Daten entfernt; dabei kann auch der Rätselfortschritt verloren gehen.</p>
+
+      <h2>Wenn du an einem geschlossenen Test auf Einladung teilgenommen hast</h2>
       <p>Öffne die <a href="https://play.google.com/apps/testing/com.dearlittleroads.puzzle">Google-Play-Seite zur Testteilnahme</a>, verlasse dort den Test und deinstalliere die App wie gewohnt. Du kannst den Test jederzeit verlassen.</p>
-      <p>Wenn du bereits übertragene Diagnosedaten löschen lassen möchtest, kopiere den Löschcode und sende die Anfrage vor der Deinstallation oder dem Löschen der App-Daten. Andernfalls kann der Code verloren gehen.</p>
-      <p>Wenn du den Play-Test verlässt, wird deine Adresse nicht unbedingt aus unserer von uns verwalteten Testerliste entfernt. Um die Entfernung anzufordern, schreibe von der für den Testzugang verwendeten E-Mail-Adresse deines Google-Kontos an <a href="mailto:dear.little.roads@gmail.com?subject=Dear%20Little%20Roads%20Testerdaten%20entfernen">dear.little.roads@gmail.com</a>. Diese Anfrage ist von der Löschung freiwilliger Diagnosedaten getrennt; dafür wird der oben beschriebene zufällige Löschcode benötigt.</p>
+      <p>Wenn du den Play-Test verlässt, wird deine Adresse nicht unbedingt aus unserer von uns verwalteten Testerliste entfernt. Um die Entfernung anzufordern, schreibe von der für den Testzugang verwendeten E-Mail-Adresse deines Google-Kontos an <a href="mailto:dear.little.roads@gmail.com?subject=Dear%20Little%20Roads%20Testerdaten%20entfernen">dear.little.roads@gmail.com</a>.</p>
 
-      <h2>Bekannte Grenzen des Betatests</h2>
+      <h2>Bekannte Einschränkungen</h2>
       <ul>
         <li>Android 7.0 oder neuer ist erforderlich.</li>
-        <li>Der Fortschritt wird auf dem Gerät gespeichert und kann nach einer Deinstallation, dem Löschen der App-Daten oder einer späteren Rücksetzung des Betatests verloren gehen.</li>
-        <li>Es gibt kein Spielerkonto und keine Wiederherstellung auf einem anderen Gerät.</li>
-        <li>Der Betatest enthält keine Werbung und keine Käufe; der Support ist kostenlos.</li>
+        <li>Der Fortschritt wird auf dem Gerät gespeichert und kann nach einer Deinstallation oder dem Löschen der App-Daten verloren gehen.</li>
+        <li>Es gibt kein Spielerkonto und keinen Cloud-Spielstand. Google Play kann eine Kaufberechtigung wiederherstellen, aber nicht den Rätselfortschritt.</li>
+        <li>Das Spiel enthält keine Werbung und kein Abo. Google Play kann einen optionalen In-App-Kauf anbieten; der Support ist kostenlos.</li>
       </ul>
 
       <h2>Anschrift der Betreiberin</h2>
@@ -85,6 +153,7 @@
     </article>
   </main>
 
-  <footer><div class="wrap"><a href="index.html">Dear Little Roads beta</a> · <a href="privacy.html">Privacy / <span lang="de">Datenschutz</span></a></div></footer>
+  <footer><div class="wrap"><a href="index.html">Dear Little Roads</a> · <a href="privacy.html">Privacy / <span lang="de">Datenschutz</span></a> · <a href="legal.html">Legal notice / <span lang="de">Impressum</span></a></div></footer>
+  <script type="module" src="support-form.js"></script>
 </body>
 </html>
