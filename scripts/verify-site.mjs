@@ -45,12 +45,12 @@ export const EXPECTED_PAYLOAD_OBJECTS = Object.freeze({
   "assets/feature-graphic-1024x500.png": { bytes: 45_875, sha256: "c65c332716277644c95fe05f465972a0baa6641d7d4bfbd86bde332ac3168ec9" },
   "assets/icon-512x512.png": { bytes: 7_639, sha256: "7fefdd49d6f32ece075b5cfe69c2ae03ed7899c4e9c8c3a51a267e1299cf15a9" },
   "index.html": { bytes: 8_026, sha256: "cac588aa3c79585803b295c27543e03292755bb8bf05ac7d329916713073fb55" },
-  "join.html": { bytes: 8_638, sha256: "f48ff7f9f6ffcd13d61f18a7245ecb683419fb0dba35be0e1a13e783da881d9d" },
+  "join.html": { bytes: 8_849, sha256: "0fc8c254e3f0fc6a9551bc2404a17e082e8ad658e32f4554e6b2461296bb4ebb" },
   "legal.html": { bytes: 3_923, sha256: "caad8e3ad1d5937b73f9737f00233aa1d1799846706d0d821f829cdc3884e1ff" },
-  "privacy.html": { bytes: 29_298, sha256: "d3827a4f17f9c04dc364b0618c9bc983aae93f121fa77f9de461e5428a0bd32a" },
+  "privacy.html": { bytes: 30_035, sha256: "c5899984b66a43e579c1b209d602de65729892851e14f302cb37121199fafdd3" },
   "styles.css": { bytes: 8_596, sha256: "08950f4ed2816de9dfbe0c140e5f139ffb8ef39624b1d8111ad1f4637eb2cc94" },
   "support-form.js": { bytes: 5_866, sha256: "662d58c3f666c73d54f0b15241b45199195f15f5fc5d8bae2dde986df5ecab89" },
-  "support.html": { bytes: 19_994, sha256: "e0082db4935b46f153d80b283cddda1b1ede9e4bab765dcc1677d34a71ddb79a" },
+  "support.html": { bytes: 20_440, sha256: "33e34be60b42c4cd9b30724cbcb6a3fd4eb8c8fa77990974768dbf8e4a0bb10e" },
 });
 
 export const DEFAULT_PUBLIC_URL = "https://dearlittleroads.github.io/";
@@ -293,6 +293,45 @@ export function assertRequestSurface(text) {
   }
 }
 
+export function assertRequiredCopyMarkers(text) {
+  const requiredMarkers = {
+    "join.html": [
+      "Older test builds distributed through Google Play may still show optional diagnostics.",
+      "Versions 0.13.6 and 0.13.7 use their older control",
+      "In version 0.13.6, open About; in version 0.13.7, open Settings; then switch Beta diagnostics off.",
+      "Ältere über Google Play verteilte Testfassungen können noch einen optionalen Diagnoseschalter anzeigen.",
+      "Die Versionen 0.13.6 und 0.13.7 verwenden diesen älteren Schalter",
+      "Öffne in Version 0.13.6 „Über“ beziehungsweise in Version 0.13.7 „Einstellungen“ und schalte die Beta-Diagnose aus.",
+    ],
+    "privacy.html": [
+      "<strong>Effective:</strong> 27 August 2026",
+      "<strong>Gültig ab:</strong> 27. August 2026",
+      "The planned public version does not collect or send analytics or diagnostic events.",
+      "Die geplante öffentliche Version erfasst und sendet keine Analyse- oder Diagnoseereignisse.",
+      "Older invitation-only test versions distributed through Google Play—including 0.13.6 and 0.13.7—",
+      "in version 0.13.6, open About; in version 0.13.7, open Settings; then switch Beta diagnostics off.",
+      "Die älteren, über Google Play nur an eingeladene Testpersonen verteilten Testfassungen – darunter die Versionen 0.13.6 und 0.13.7 –",
+      "Öffne in Version 0.13.6 „Über“ beziehungsweise in Version 0.13.7 „Einstellungen“ und schalte die Beta-Diagnose aus.",
+    ],
+    "support.html": [
+      FORM_ENDPOINT,
+      "Send message",
+      "Nachricht senden",
+      "support-form.js",
+      "Older invitation-only test versions distributed through Google Play—including 0.13.6 and 0.13.7—",
+      "in version 0.13.6, open About; in version 0.13.7, open Settings; then switch Beta diagnostics off.",
+      "Die älteren, über Google Play nur an eingeladene Testpersonen verteilten Testfassungen – darunter die Versionen 0.13.6 und 0.13.7 –",
+      "Öffne in Version 0.13.6 „Über“ beziehungsweise in Version 0.13.7 „Einstellungen“ und schalte die Beta-Diagnose aus.",
+    ],
+    "support-form.js": [FORM_ENDPOINT, "AbortController", "application/json", "response.ok"],
+  };
+  for (const [name, markers] of Object.entries(requiredMarkers)) {
+    for (const marker of markers) {
+      if (!text[name].includes(marker)) throw new Error(`${name} is missing approved marker: ${marker}`);
+    }
+  }
+}
+
 export function readAndAssertLocalContract(root = defaultRoot) {
   assertExactLocalFileSet(root);
 
@@ -313,26 +352,7 @@ export function readAndAssertLocalContract(root = defaultRoot) {
   );
   const binary = Object.fromEntries(PUBLIC_BINARY_FILES.map((name) => [name, payload[name]]));
 
-  const requiredMarkers = {
-    "privacy.html": [
-      "<strong>Effective:</strong> 27 August 2026",
-      "<strong>Gültig ab:</strong> 27. August 2026",
-      "The planned public version does not collect or send analytics or diagnostic events.",
-      "Die geplante öffentliche Version erfasst und sendet keine Analyse- oder Diagnoseereignisse.",
-    ],
-    "support.html": [
-      FORM_ENDPOINT,
-      "Send message",
-      "Nachricht senden",
-      "support-form.js",
-    ],
-    "support-form.js": [FORM_ENDPOINT, "AbortController", "application/json", "response.ok"],
-  };
-  for (const [name, markers] of Object.entries(requiredMarkers)) {
-    for (const marker of markers) {
-      if (!text[name].includes(marker)) throw new Error(`${name} is missing approved marker: ${marker}`);
-    }
-  }
+  assertRequiredCopyMarkers(text);
   for (const name of PUBLIC_HTML_FILES) {
     if (!/href=["']legal\.html(?:#[^"']*)?["']/iu.test(text[name])) {
       throw new Error(`${name} does not link to the legal notice.`);
