@@ -25,6 +25,7 @@ export const PUBLIC_BINARY_FILES = [
 
 export const PUBLIC_PAYLOAD_FILES = [
   ".nojekyll",
+  "app-ads.txt",
   ...PUBLIC_TEXT_FILES,
   ...PUBLIC_BINARY_FILES,
 ].sort((left, right) => left.localeCompare(right, "en"));
@@ -40,6 +41,7 @@ export const REPOSITORY_FILES = [
 ].sort((left, right) => left.localeCompare(right, "en"));
 
 export const EXPECTED_PAYLOAD_OBJECTS = Object.freeze({
+  "app-ads.txt": { bytes: 59, sha256: "64d900de2f034d5459a6a7f339be68f2c7304ea417eadf6f37236cdc5310b49b" },
   ".nojekyll": { bytes: 42, sha256: "00dfd28be377b76a6af53a9e45df109a348f2b9c831c0aabd085ab7ca8587e82" },
   "404.html": { bytes: 2_441, sha256: "3ee6bb1a6d1ea836c69ea48b6487a0fe04832b9fcf9a963c8699ef347eee8a80" },
   "assets/feature-graphic-1024x500.png": { bytes: 45_875, sha256: "c65c332716277644c95fe05f465972a0baa6641d7d4bfbd86bde332ac3168ec9" },
