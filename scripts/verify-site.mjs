@@ -46,13 +46,13 @@ export const EXPECTED_PAYLOAD_OBJECTS = Object.freeze({
   "404.html": { bytes: 2_441, sha256: "3ee6bb1a6d1ea836c69ea48b6487a0fe04832b9fcf9a963c8699ef347eee8a80" },
   "assets/feature-graphic-1024x500.png": { bytes: 45_875, sha256: "c65c332716277644c95fe05f465972a0baa6641d7d4bfbd86bde332ac3168ec9" },
   "assets/icon-512x512.png": { bytes: 7_639, sha256: "7fefdd49d6f32ece075b5cfe69c2ae03ed7899c4e9c8c3a51a267e1299cf15a9" },
-  "index.html": { bytes: 8_026, sha256: "cac588aa3c79585803b295c27543e03292755bb8bf05ac7d329916713073fb55" },
-  "join.html": { bytes: 8_849, sha256: "0fc8c254e3f0fc6a9551bc2404a17e082e8ad658e32f4554e6b2461296bb4ebb" },
+  "index.html": { bytes: 9_045, sha256: "56eff3ce39e70e23c970de69b1b13702f17313f7d3f97994c310e3f3b98108af" },
+  "join.html": { bytes: 8_718, sha256: "c7b3997cbb7d6bd49c264d237e46c08bd045e251d0ec607dc5c737c190b9b581" },
   "legal.html": { bytes: 3_923, sha256: "caad8e3ad1d5937b73f9737f00233aa1d1799846706d0d821f829cdc3884e1ff" },
-  "privacy.html": { bytes: 39_791, sha256: "e55365cf4bd0478f02c43e1d17e903ab6937135b4f73bbe3bc53cf3097a84f2b" },
-  "styles.css": { bytes: 8_596, sha256: "08950f4ed2816de9dfbe0c140e5f139ffb8ef39624b1d8111ad1f4637eb2cc94" },
+  "privacy.html": { bytes: 41089, sha256: "424af58ef0f538e0cfde0f393206d72c9405a56b039fc92d4f0747b64f8f88e6" },
+  "styles.css": { bytes: 8_662, sha256: "b086fed4d4154ffe549a646fecf77b33c3a5cb8f03f61be7072333472ebb32e2" },
   "support-form.js": { bytes: 5_866, sha256: "662d58c3f666c73d54f0b15241b45199195f15f5fc5d8bae2dde986df5ecab89" },
-  "support.html": { bytes: 20_440, sha256: "33e34be60b42c4cd9b30724cbcb6a3fd4eb8c8fa77990974768dbf8e4a0bb10e" },
+  "support.html": { bytes: 20_497, sha256: "687eef011b624b572988d54eb844b50ac6ff5984483857a3c2fd86e1702bb481" },
 });
 
 export const DEFAULT_PUBLIC_URL = "https://dearlittleroads.github.io/";
@@ -297,6 +297,18 @@ export function assertRequestSurface(text) {
 
 export function assertRequiredCopyMarkers(text) {
   const requiredMarkers = {
+    "index.html": [
+      "The following applies when Settings shows version 1.0.1.",
+      "This page does not announce that the update is available",
+      "Die folgenden Angaben gelten, wenn in den Einstellungen Version 1.0.1 steht.",
+      "Diese Seite kündigt keine Verfügbarkeit des Updates an",
+      "<strong>Version 1.0.0:</strong> 63 campaign routes",
+      "<strong>Version 1.0.0:</strong> 63 Kampagnenrouten",
+      "All 100 campaign routes are free to reach as you progress",
+      "No ads, in-app purchases, or subscriptions in this version",
+      "Alle 100 Kampagnenrouten sind im Spielverlauf kostenlos erreichbar",
+      "Keine Werbung, In-App-Käufe oder Abos in dieser Fassung",
+    ],
     "join.html": [
       "Older test builds distributed through Google Play may still show optional diagnostics.",
       "Versions 0.13.6 and 0.13.7 use their older control",
@@ -306,8 +318,8 @@ export function assertRequiredCopyMarkers(text) {
       "Öffne in Version 0.13.6 „Über“ beziehungsweise in Version 0.13.7 „Einstellungen“ und schalte die Beta-Diagnose aus.",
     ],
     "privacy.html": [
-      "<strong>Effective:</strong> 27 August 2026",
-      "<strong>Gültig ab:</strong> 27. August 2026",
+      "<strong>Effective:</strong> 1 October 2026",
+      "<strong>Gültig ab:</strong> 1. Oktober 2026",
       "<strong>Internal-test addendum published:</strong> 17 September 2026",
       "<strong>Ergänzung zum internen Test veröffentlicht:</strong> 17. September 2026",
       '<h2 id="internal-ad-test">Optional internal consent and demo-ad test</h2>',
@@ -316,14 +328,18 @@ export function assertRequiredCopyMarkers(text) {
       "Die erste Diagnose-App verwendet ausschließlich UMP; sie enthält weder eine Abhängigkeit von Googles Werbe-SDK noch eine Implementierung von Demoanzeigen.",
       "Closing does not cancel already-started SDK work, in-flight network requests or processing of data already received by Google.",
       "Das Schließen bricht bereits gestartete SDK-Abläufe, laufende Netzwerkanfragen oder die Verarbeitung schon bei Google eingegangener Daten nicht ab.",
-      "The planned public version does not collect or send analytics or diagnostic events.",
-      "Die geplante öffentliche Version erfasst und sendet keine Analyse- oder Diagnoseereignisse.",
+      "Version 1.0.1 does not collect or send analytics or diagnostic events.",
+      "Version 1.0.1 erfasst und sendet keine Analyse- oder Diagnoseereignisse.",
       "Older invitation-only test versions distributed through Google Play—including 0.13.6 and 0.13.7—",
       "in version 0.13.6, open About; in version 0.13.7, open Settings; then switch Beta diagnostics off.",
       "Die älteren, über Google Play nur an eingeladene Testpersonen verteilten Testfassungen – darunter die Versionen 0.13.6 und 0.13.7 –",
       "Öffne in Version 0.13.6 „Über“ beziehungsweise in Version 0.13.7 „Einstellungen“ und schalte die Beta-Diagnose aus.",
     ],
     "support.html": [
+      "The free version does not check or restore purchase ownership, including after a fresh installation.",
+      "Existing local access records are left untouched.",
+      "Die kostenlose Fassung prüft Kaufberechtigungen nicht und stellt sie auch nach einer Neuinstallation nicht wieder her.",
+      "Vorhandene lokale Zugriffsdatensätze bleiben unangetastet.",
       FORM_ENDPOINT,
       "Send message",
       "Nachricht senden",
